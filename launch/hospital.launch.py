@@ -19,7 +19,8 @@ def generate_launch_description():
      )
     gazebo_server = launch.actions.IncludeLaunchDescription(
         launch.launch_description_sources.PythonLaunchDescriptionSource(
-            os.path.join(gazebo_ros, 'launch', 'gzserver.launch.py'))
+            os.path.join(gazebo_ros, 'launch', 'gzserver.launch.py')),
+            launch_arguments={'verbose': 'true','world': world}.items()
     )
 
 
